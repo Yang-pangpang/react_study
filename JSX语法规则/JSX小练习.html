@@ -1,0 +1,47 @@
+<!--
+ * @Author: yang guoan
+ * @Date: 2022-02-18 14:15:07
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-02-18 14:55:17
+ * @FilePath: /react-basic/hello_react/hello_react.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+
+
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react.dom  用于支持react操作DOM -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- 引入babel,用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel"> // 此处一定要写babel
+        // 模拟一些数据：
+        const data  = ['Angular','React','Vue']
+        // 1:创建虚拟DOM
+        const VDOM =(
+            <div>
+                <h1>前端js框架列表</h1>
+                <ul>
+                    <li>Angular</li>
+                   
+                    </ul>
+                </div>
+
+        ) /* 此处一定不要写引号，因为不是字符串*/
+        // 2:渲染虚拟DOM到页面
+        // 此处调用render方法,接受两个参数，1:虚拟DOM，  2: 容器
+        ReactDOM.render(VDOM,document.getElementById('test'))
+    </script>
+</body>
+</html>
