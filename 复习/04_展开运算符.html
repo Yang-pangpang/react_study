@@ -1,0 +1,44 @@
+<!--
+ * @Author: yang guoan
+ * @Date: 2022-03-07 10:44:57
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-07 11:04:32
+ * @FilePath: /react-basic/复习/04_展开运算符.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,3,5,7,9]
+        let arr2 = [2,4,6,8,10]
+        console.log(...arr1); // 展开一个数组
+        let arr3 = [...arr1,...arr2] // 连接数组
+        console.log(arr3);
+        // 在函数中使用，数组求和
+        function sum(...numbers) {
+            return numbers.reduce((preValue,currentValue)=> {
+                return preValue + currentValue
+            })
+            // console.log('numbers',numbers);
+        }
+        console.log(sum(1,2,3,4,5));
+
+        // 构造字面量对象时使用展开方法
+        let person = {name:"tom",age:18,sex:"男"}
+        // console.log(...person); // 错误写法，展开运算符不能展开对象
+        let person2 = {...person}
+        person.name = "Yonga"
+        console.log(person2);
+        console.log(person);
+        // 合并
+        let person3 = {...person,name:"Jack",address:"地球"}
+        console.log(person3);
+    </script>
+</body>
+</html>
