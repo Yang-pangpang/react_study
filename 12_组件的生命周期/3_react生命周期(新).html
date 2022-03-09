@@ -2,7 +2,7 @@
  * @Author: yang guoan
  * @Date: 2022-03-08 18:37:14
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-08 18:58:22
+ * @LastEditTime: 2022-03-09 16:02:32
  * @FilePath: /react-basic/12_组件的生命周期/3_react生命周期(新).html
 -->
 <!DOCTYPE html>
@@ -26,6 +26,28 @@
        <script type="text/javascript" src="../js//17.0.1//babel.min.js"></script>
    
        <script type="text/babel"> // 此处一定要写babel
+             /*
+            1.初始化阶段：由ReactDOM.render()触发-----初次渲染
+                1:constructor()
+                2:componentWillMount()
+                3:render()
+                4:componentDidMount() ======> 常用
+                    一般在这个钩子函数中做一些初始化的事，例如：开启定时器，发送网络请求，订阅消息等等···
+
+            2:更新阶段： 由组件内部的this.setState()或父组件重新render触发
+                1:getDerivedStateFromProps
+                2:shouldComponentUpdate()
+                3:componentWillUpdate()
+                4:render()
+                5:componentDidUpdate()
+
+            3:卸载组件：由ReactDOM.unmountComponentAtNode()触发
+                1:componentWillUnmount()
+                   一般在这个钩子函数中做一些收尾的事，例如：关闭定时器，取消订阅消息
+        */
+
+
+
              // 1:创建虚拟DOM
                class Count extends React.Component {
                    // 构造器
@@ -51,7 +73,6 @@
                    force = () => {
                        this.forceUpdate()
                    }
-   
    
    
                    // 组件将要挂载的钩子
